@@ -17,29 +17,45 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Ashish Reddy Jaddu | CTO & Full-Stack AI Engineer',
-  description: 'Startup CTO specializing in LLM-powered legal-tech solutions, RAG systems, and workflow automation. Led 4 product pivots from GPT-based legal research to AI workflow automation at LegiSimple/Trails.',
+  title: 'Ashish Reddy Jaddu | Founding AI Engineer — RAG, LLM & Backend Systems',
+  description: 'Founding AI Engineer with 3+ years building production RAG systems, LLM pipelines, and AI-powered workflow automation on Azure & GCP. Shipped 4 product pivots at a legal-tech startup. Open to backend, AI engineering, and full-stack IC roles.',
   keywords: [
     'Ashish Reddy Jaddu',
-    'CTO',
-    'Full Stack Developer',
-    'Generative AI Engineer',
-    'LLM',
+    'Founding AI Engineer',
+    'Full Stack Engineer',
+    'Backend Engineer',
+    'AI Engineer',
+    'LLM Engineer',
     'RAG',
+    'Retrieval-Augmented Generation',
+    'LangChain',
+    'LangGraph',
     'OpenAI',
     'Azure OpenAI',
+    'Vertex AI',
+    'Pinecone',
+    'Vector Search',
     'Python',
     'Django',
     'Next.js',
     'React',
-    'Montreal Developer',
-    'LegiSimple',
-    'Trails',
+    'TypeScript',
+    'Node.js',
+    'Toronto Developer',
+    'Toronto',
+    'Canada',
     'Legal Tech',
     'AI Workflow Automation',
+    'Prompt Engineering',
+    'Fine-tuning',
+    'MLOps',
     'Vector Embeddings',
-    'Machine Learning',
-    'Vertex AI'
+    'Azure',
+    'GCP',
+    'Docker',
+    'Kubernetes',
+    'Production AI',
+    'Open to Work',
   ],
   authors: [{ name: 'Ashish Reddy Jaddu' }],
   creator: 'Ashish Reddy Jaddu',
@@ -47,23 +63,14 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://ashishjaddu.dev',
-    title: 'Ashish Reddy Jaddu | CTO & Full-Stack AI Engineer',
-    description: 'Startup CTO specializing in LLM-powered legal-tech solutions, RAG systems, and workflow automation. Building the future of legal tech with AI.',
+    title: 'Ashish Reddy Jaddu | Founding AI Engineer — RAG, LLM & Backend Systems',
+    description: 'Founding AI Engineer with production RAG systems, LLM pipelines, and AI-powered workflow automation on Azure & GCP. 4 product pivots shipped at legal-tech startup.',
     siteName: 'Ashish Reddy Jaddu Portfolio',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Ashish Reddy Jaddu - Full Stack Developer',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ashish Reddy Jaddu | CTO & Full-Stack AI Engineer',
-    description: 'Startup CTO specializing in LLM-powered legal-tech solutions, RAG systems, and AI workflow automation.',
-    images: ['/og-image.jpg'],
+    title: 'Ashish Reddy Jaddu | Founding AI Engineer — RAG, LLM & Backend Systems',
+    description: 'Founding AI Engineer building production RAG systems, LLM pipelines, and AI-powered workflow automation on Azure & GCP.',
   },
   robots: {
     index: true,
@@ -75,9 +82,6 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  },
-  verification: {
-    google: 'your-google-verification-code',
   },
 }
 
@@ -96,6 +100,67 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Ashish Reddy Jaddu",
+              "jobTitle": "Founding AI Engineer",
+              "description": "Founding AI Engineer with 3+ years building production RAG systems, LLM pipelines, and AI-powered workflow automation on Azure & GCP. Open to backend, AI engineering, and full-stack IC roles.",
+              "url": "https://ashishjaddu.dev",
+              "email": "ashishjaddu@gmail.com",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Toronto",
+                "addressRegion": "ON",
+                "addressCountry": "CA"
+              },
+              "sameAs": [
+                "https://github.com/ashishreddy2411",
+                "https://www.linkedin.com/in/ashishjaddu/"
+              ],
+              "knowsAbout": [
+                "Retrieval-Augmented Generation",
+                "Large Language Models",
+                "LangChain",
+                "Azure OpenAI",
+                "Vertex AI",
+                "Python",
+                "Django",
+                "Next.js",
+                "React",
+                "Vector Databases",
+                "Pinecone",
+                "Prompt Engineering",
+                "MLOps",
+                "Backend Engineering",
+                "Full Stack Development",
+                "AI Workflow Automation"
+              ],
+              "alumniOf": {
+                "@type": "CollegeOrUniversity",
+                "name": "Concordia University",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Montreal",
+                  "addressRegion": "QC",
+                  "addressCountry": "CA"
+                }
+              },
+              "hasCredential": {
+                "@type": "EducationalOccupationalCredential",
+                "name": "Master of Science in Applied Computer Science",
+                "credentialCategory": "degree",
+                "recognizedBy": {
+                  "@type": "CollegeOrUniversity",
+                  "name": "Concordia University"
+                }
+              }
+            })
+          }}
+        />
       </head>
       <body className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}>
         <ThemeProvider

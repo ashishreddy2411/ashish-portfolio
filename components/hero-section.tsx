@@ -18,9 +18,9 @@ function InteractiveTerminal() {
 
   const commands = [
     "$ whoami",
-    "ashish-reddy-jaddu - CTO @ LegiSimple/Trails",
-    "$ pwd",
-    "/home/ashish/legisimple-trails/production",
+    "ashish-reddy-jaddu — Founding AI Engineer",
+    "$ cat roles.txt",
+    "Backend Engineer | AI Engineer | Full-Stack Engineer",
     "$ cat stack-in-production.yml",
     "cloud:",
     "  - Azure App Services (Python/Django APIs)",
@@ -29,11 +29,11 @@ function InteractiveTerminal() {
     "  - Azure OpenAI (GPT-4, embeddings)",
     "  - Azure AI Search (vector + hybrid search)",
     "ai_ml:",
-    "  - Vertex AI (fine-tuning: 82% → 87% accuracy)",
-    "  - Pinecone (5K+ legal doc embeddings)",
+    "  - Vertex AI (eval pipeline: 82% → 87% retrieval precision)",
+    "  - Pinecone (120K+ case law embeddings)",
     "  - LangChain + LangGraph (multi-step agents)",
     "mobile:",
-    "  - Lychii mobile apps (React Native)",
+    "  - Mobile apps (React Native, iOS + Android)",
     "  - Published on iOS App Store + Google Play",
     "monitoring:",
     "  - Mixpanel + PostHog (product analytics)",
@@ -45,7 +45,7 @@ function InteractiveTerminal() {
     "$ git log --oneline --graph -5",
     "* 3a9f2c1 perf: Cut API latency 30% via Redis caching",
     "* b7e4d18 feat: React Native offline-first architecture",
-    "* 8c2a5f9 feat: Vertex AI fine-tuning with 5K records",
+    "* 8c2a5f9 feat: Vertex AI eval pipeline, 82%→87% precision",
     "* d1f6e23 feat: Azure Durable Functions workflow engine",
     "* 2e9b7a4 feat: RAG pipeline with Pinecone + OpenAI",
     "$ _",
@@ -333,31 +333,31 @@ export function HeroSection() {
 
                 {/* Outcome-Driven Headline */}
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mt-4">
-                  CTO turning legal workflows into <span className="gradient-text">AI copilots</span>
+                  Founding Engineer shipping <span className="gradient-text">production AI systems</span>
                 </h2>
 
                 <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                  Shipping production <span className="text-primary font-semibold">RAG systems</span> on Azure + Vertex AI • 4 pivots in 18 months
+                  Backend · AI/LLM · Full-Stack — <span className="text-primary font-semibold">RAG, Azure, Vertex AI</span> · 4 pivots shipped
                 </p>
               </div>
             </div>
 
             {/* Description */}
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl text-pretty">
-              Building production AI systems at{" "}
-              <span className="text-primary font-semibold">LegiSimple/Trails</span> as CTO.
-              I architect and ship RAG-powered legal research platforms, fine-tune LLMs for accuracy improvements,
-              and build full-stack applications from Python/Django backends to React Native mobile apps.
-              Shipped 4 product pivots in 18 months—from OpenAI-powered research tools to multi-channel workflow
+              Founding Engineer at{" "}
+              <span className="text-primary font-semibold">LegiSimple</span> — 3+ years building production AI systems.
+              I architect and ship RAG-powered legal research platforms, optimize LLM retrieval pipelines,
+              and build full-stack applications from Python/Django APIs to React Native mobile apps.
+              Shipped 4 product pivots in 20 months—from OpenAI-powered research tools to multi-channel workflow
               automation on Azure infrastructure.
             </p>
 
             {/* Key Metrics */}
             <div className="grid sm:grid-cols-3 gap-4 max-w-2xl">
               {[
-                { label: "Product Velocity", value: "4 pivots", desc: "shipped in 18 months", impact: "from idea to production MVP" },
-                { label: "AI Accuracy Gain", value: "82% → 87%", desc: "via Vertex AI fine-tuning", impact: "for legal document retrieval" },
-                { label: "Workflow Impact", value: "3hr → 15min", desc: "83% time reduction", impact: "saved 12 paralegals 3hrs each" },
+                { label: "Product Velocity", value: "4 pivots", desc: "shipped in 20 months", impact: "from idea to production MVP" },
+                { label: "RAG System", value: "< 1 sec", desc: "query latency in production", impact: "hybrid search over 120K+ legal cases" },
+                { label: "Workflow Impact", value: "3hr → 15min", desc: "end-to-end process time", impact: "HR sanctions automation" },
               ].map((stat) => (
                 <div key={stat.label} className="group p-5 bg-muted/40 backdrop-blur-sm rounded-lg border border-border/50 hover:border-primary/50 hover:bg-muted/60 transition-all duration-300">
                   <p className="text-xs uppercase tracking-wide text-muted-foreground mb-2">{stat.label}</p>
@@ -372,7 +372,7 @@ export function HeroSection() {
             <div className="flex flex-wrap gap-6 text-muted-foreground">
               <div className="flex items-center gap-2 hover:text-foreground transition-colors">
                 <MapPin className="h-4 w-4 text-primary" />
-                <span>Montreal, Canada</span>
+                <span>Toronto, Canada</span>
               </div>
               <button 
                 onClick={handleEmailClick}

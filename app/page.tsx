@@ -11,7 +11,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import {
   Mail, MapPin, Github, Linkedin,
   ChevronRight, Award,
-  Calendar, TrendingUp, User
+  Calendar, TrendingUp, User, GraduationCap
 } from "lucide-react"
 import { toast } from "sonner"
 import { GridPattern } from "@/components/magicui/grid-pattern"
@@ -30,7 +30,7 @@ function SkillsSection() {
     "Generative AI & LLMs": [
       { name: "OpenAI & Azure OpenAI", proficiency: "Expert", description: "Production LLM integration, prompt engineering, AI agents", icon: "🤖" },
       { name: "RAG Systems", proficiency: "Expert", description: "Vector embeddings, semantic search, retrieval pipelines", icon: "🔍" },
-      { name: "Vertex AI & Fine-tuning", proficiency: "Advanced", description: "Model training, API-based fine-tuning, 82%→87% accuracy", icon: "📈" },
+      { name: "Vertex AI", proficiency: "Advanced", description: "Model evaluation pipelines, ground truth dataset creation, retrieval precision measurement and improvement", icon: "📈" },
       { name: "Vector Databases", proficiency: "Advanced", description: "Pinecone, Azure AI Search, embeddings storage", icon: "🗄️" },
       { name: "LangChain & LangGraph", proficiency: "Advanced", description: "AI workflow orchestration, multi-step agents", icon: "⛓️" },
     ],
@@ -115,9 +115,9 @@ function SkillsSection() {
             Building <span className="gradient-text">Innovative Solutions</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Startup CTO with 4+ years of experience building LLM-powered legal-tech products at LegiSimple/Trails,
-            from GPT-based research to production RAG systems. I architect secure Azure/GCP backends, fine-tune AI models,
-            and ship MVPs that transform complex workflows into intuitive software law firms actually use.
+            Founding AI Engineer with 3+ years building production RAG systems, LLM pipelines, and AI-powered workflow automation at LegiSimple/Trails.
+            I architect hybrid search systems with custom relevance metrics, build agentic orchestration pipelines,
+            and ship full-stack products on Azure + GCP that real users rely on.
           </p>
         </div>
 
@@ -135,19 +135,19 @@ function SkillsSection() {
                 <p>
                   My journey began in 2020 at HCL Technologies in India, building RESTful APIs and optimizing
                   databases. After earning my Master's in Applied Computer Science from Concordia University
-                  (2022-2024), I joined the startup world as Chief Technology Officer.
+                  (2022-2024), I joined LegiSimple as a founding engineer at the ground floor.
                 </p>
                 <p>
-                  At <span className="text-primary font-semibold">LegiSimple</span>, I own the technical roadmap
-                  and architecture decisions for an AI-native legal-tech startup. I've led 4 product pivots—from
-                  GPT-based legal research to Canadian/US case law search to workflow automation—shipping MVPs at
-                  each stage and validating them directly with lawyers.
+                  At <span className="text-primary font-semibold">LegiSimple</span>, I led technical architecture
+                  for an AI-native legal-tech startup over 20 months. Shipped 4 product pivots—from
+                  GPT-based legal research to a hybrid RAG system over 120K+ case law documents to AI-powered
+                  workflow automation—iterating directly with law-firm partners at each stage.
                 </p>
                 <div className="flex flex-wrap gap-2 mt-4">
-                  <Badge variant="secondary">🚀 Startup CTO</Badge>
-                  <Badge variant="secondary">🤖 LLM Engineering</Badge>
-                  <Badge variant="secondary">📊 RAG Systems</Badge>
-                  <Badge variant="secondary">⚡ MVP Velocity</Badge>
+                  <Badge variant="secondary">🤖 RAG Systems</Badge>
+                  <Badge variant="secondary">⚡ Agentic Pipelines</Badge>
+                  <Badge variant="secondary">🔧 Backend Engineering</Badge>
+                  <Badge variant="secondary">🚀 Startup Velocity</Badge>
                 </div>
               </CardContent>
             </Card>
@@ -164,28 +164,28 @@ function SkillsSection() {
                 <div className="space-y-4">
                   {[
                     {
-                      title: "RAG-Based Legal Research",
-                      description: "Built GPT-powered semantic search across Canadian & US case law using embeddings, vector search, and Vertex AI fine-tuning (1K→5K records, 82%→87% accuracy)",
+                      title: "Production RAG System",
+                      description: "Built hybrid RAG pipeline over 120K+ legal cases: section-aware parsing, agentic chunking, custom relevance metric (cosine + citation count + recency + shepherdization). Ground truth eval improved from 82% → 87% retrieval precision. Sub-second latency.",
                       icon: "🔍",
-                      badge: "AI/ML"
+                      badge: "AI/LLM Systems"
+                    },
+                    {
+                      title: "Agentic Orchestration",
+                      description: "Designed multi-agent system with an orchestrator coordinating specialized agents: case retrieval, citation validation, and overturned-case detection (shepherdization). Integrated guardrails to catch hallucinated citations.",
+                      icon: "🤖",
+                      badge: "AI Architecture"
                     },
                     {
                       title: "Workflow Automation Impact",
-                      description: "End-to-end sanction workflow platform cutting manual 3-hour process to 15-30 minutes with mobile apps, AI analysis, and real-time dashboards",
+                      description: "End-to-end HR sanctions platform: Azure Durable Functions orchestrator gathers employee history + handbook + labor regulations, AI recommends action level, human-in-the-loop HR approval, auto-generates compliant letters. 3 hours → 15 minutes.",
                       icon: "⚡",
-                      badge: "Product Innovation"
+                      badge: "Product Engineering"
                     },
                     {
-                      title: "API Performance & Security",
-                      description: "Optimized Python/Django APIs with caching and query tuning (30% faster), added rate-limiting and Cloudflare protection for sensitive legal data",
+                      title: "Backend Performance & Security",
+                      description: "Python/Django APIs optimized with Redis caching + query tuning (30% faster). Azure OpenAI + AI Search in private VNet. Cloudflare WAF protection for sensitive law-firm data. 99.9% uptime.",
                       icon: "🚀",
                       badge: "Backend Excellence"
-                    },
-                    {
-                      title: "Azure Architecture",
-                      description: "Architected secure Azure backend (App Services, Durable Functions, Azure SQL) with Azure OpenAI + AI Search in private VNet",
-                      icon: "☁️",
-                      badge: "Cloud Infrastructure"
                     },
                   ].map((achievement, index) => (
                     <div key={index} className="p-4 rounded-lg border border-border/50 hover:border-primary/30 transition-all duration-200 group">
@@ -258,35 +258,51 @@ function ExperienceSection() {
   const experiences = [
     {
       id: "legisimple",
-      company: "LegiSimple/Trails",
-      role: "Chief Technology Officer",
+      company: "LegiSimple / Trails Legal",
+      role: "Founding Engineer",
       location: "Montreal, Canada",
-      period: "July 2024 - Present",
+      period: "July 2024 – Feb 2026",
       type: "Full-time",
       achievements: [
-        "Architected and shipped 4 complete product pivots in 18 months (GPT-based legal research → Canadian case law → US case law → workflow automation), building and deploying full-stack MVPs at each stage",
-        "Built RAG-based legal research platform: Python NLP for document parsing, OpenAI embeddings for semantic search, Vertex AI fine-tuning (1K→5K training records boosted accuracy 82%→87%), automated retraining pipelines",
-        "Developed end-to-end multi-channel workflow automation: React Native mobile apps (iOS/Android live in stores), Python/Django backend with Azure Durable Functions, real-time SignalR dashboards—reduced 3hr manual process to 15min",
-        "Designed and deployed Azure infrastructure: App Services, Durable Functions orchestration, Azure SQL databases, Azure OpenAI + AI Search in private VNet for law-firm data security",
-        "Optimized production APIs: implemented Redis caching, query optimization, connection pooling (30% faster responses), memory reduction (25%), rate-limiting, and Cloudflare DDoS protection",
-        "Built Next.js/React frontends with TypeScript, Zustand state management, Azure SignalR real-time updates, and analytics instrumentation (Mixpanel, PostHog) to identify and fix UX friction points"
+        "Shipped 4 product pivots in 20 months (GPT legal research → Canadian case law → US case law → workflow automation), owning architecture and delivery end-to-end across each stage",
+        "Built hybrid RAG pipeline over 120K+ legal cases: section-aware parsing, agentic chunking for complex legal sections (citations, statutes, precedence), semantic chunking for simpler sections, custom relevance metric (cosine similarity + citation count + recency + quote level + shepherdization). Retrieval precision improved from 82% → 87%",
+        "Designed agentic orchestration system: orchestrator coordinating specialized agents for case retrieval, citation validation, and overturned-case detection. Integrated guardrails to catch hallucinated citations against the database",
+        "Built HR sanctions workflow automation: Azure Durable Functions orchestrator gathers employee history, company handbook, and labor regulations; AI recommends action level; human-in-the-loop HR approval; auto-generates legally compliant letters. Reduced 3-hour manual process to 15 minutes",
+        "Architected Azure backend: App Services, Durable Functions, Azure SQL, Azure OpenAI + AI Search in private VNet with Cloudflare WAF — 99.9% uptime",
+        "Optimized Python/Django APIs with Redis caching and SQL query tuning (30% faster responses, 25% memory reduction); built Next.js/React frontends with SignalR real-time updates and Mixpanel/PostHog analytics"
       ],
-      technologies: ["Python", "Django", "Azure", "Azure OpenAI", "Vertex AI", "Next.js", "React", "Zustand", "SignalR", "Azure SQL", "Pinecone", "LangChain"],
+      technologies: ["Python", "Django", "LangChain", "Azure OpenAI", "Azure Durable Functions", "Pinecone", "Azure AI Search", "Next.js", "React", "React Native", "Vertex AI", "Redis", "Azure SQL"],
       logo: "⚖️"
+    },
+    {
+      id: "keywords",
+      company: "Keywords Studios",
+      role: "Functional QA Engineer",
+      location: "Montreal, Canada",
+      period: "Jun 2023 – Jul 2024",
+      type: "Full-time",
+      achievements: [
+        "Performed API testing and backend validation across multiple software products, verifying RESTful endpoint behavior, data integrity, and error handling",
+        "Conducted AI/ML feature testing for AI-powered products, validating LLM-generated content quality, edge case handling, and response consistency",
+        "Executed regression, smoke, integration, and exploratory testing across web applications, mobile apps, and gaming platforms — documented 200+ bugs with detailed reproduction steps",
+        "Collaborated with development teams using Jira and Bugzilla to prioritize defects and ensure timely resolution before production releases"
+      ],
+      technologies: ["API Testing", "Jira", "Bugzilla", "Regression Testing", "AI/ML Testing", "QA"],
+      logo: "🎮"
     },
     {
       id: "hcl",
       company: "HCL Technologies",
       role: "Software Engineer",
       location: "Hyderabad, India",
-      period: "Oct 2020 - Jan 2022",
+      period: "Oct 2020 – Jan 2022",
       type: "Full-time",
       achievements: [
-        "Developed and deployed RESTful APIs powering internal React applications, optimized MySQL queries improving page-load by ~20% and reducing DB response times by ~10%",
-        "Debugged complex production issues across frontend and backend services, created database-backed defect catalog boosting QA effectiveness by ~40%",
-        "Streamlined deployments for 5 web apps on Heroku, improving configuration and resource usage to cut hosting costs by ~15%"
+        "Developed and deployed RESTful APIs powering internal React applications; optimized MySQL queries improving page-load performance by ~20% and reducing DB response times by ~10%",
+        "Debugged production issues across frontend and backend services; built database-backed defect catalog boosting QA effectiveness by ~40%",
+        "Managed deployments for 5 web applications on Heroku, improving configuration and resource usage to cut hosting costs by ~15%"
       ],
-      technologies: ["Node.js", "React", "RESTful APIs", "MySQL", "Heroku"],
+      technologies: ["Node.js", "Python", "React", "RESTful APIs", "MySQL", "Heroku", "CI/CD"],
       logo: "💻"
     }
   ]
@@ -361,31 +377,31 @@ function ExperienceSection() {
 function ProjectsSection() {
   const projects = [
     {
-      id: "sanction-workflow",
-      title: "AI Sanction Workflow Automation",
-      category: "Legal Tech Product",
-      challenge: "Law firm partner faced 3-hour manual sanction process requiring field visits, document review, and coordination across multiple stakeholders—creating bottlenecks and compliance risks.",
-      solution: "Built end-to-end workflow platform with React Native mobile apps for field capture, Azure Durable Functions orchestrating AI analysis via Azure OpenAI, and Next.js dashboard with SignalR for real-time updates and audit trails.",
-      result: "Saved 12 paralegals 3 hours each per case—reduced process time from 3 hours to 15-30 minutes (83% faster), eliminated manual handoffs, and logged all actions for compliance audits.",
-      technologies: ["Azure", "Python", "Durable Functions", "Azure OpenAI", "React Native", "Next.js", "SignalR"]
+      id: "rag-legal-research",
+      title: "Hybrid RAG Legal Research System",
+      category: "AI / Backend",
+      challenge: "Law firm partners needed accurate semantic search across 120,000+ NY case law documents. Keyword search missed relevant precedents, and manual research took hours per query.",
+      solution: "Architected a hybrid RAG pipeline: section-aware document parsing, agentic chunking for complex legal sections (preserving citations, statutes, precedence signals), and semantic chunking for simpler sections. Built a custom relevance metric combining cosine similarity with citation count, recency, quote level, and shepherdization (whether a case is still good law). Added an agentic orchestration layer with specialized agents for case retrieval, citation validation, and overturned-case detection. Guardrails cross-check LLM-generated citations against the database.",
+      result: "85–90% retrieval relevance in production with sub-second latency. Ground truth evaluation improved from 82% to 87% through chunking strategy refinement and relevance metric tuning. Actively used in production for legal research.",
+      technologies: ["Python", "LangChain", "OpenAI", "Pinecone", "Azure AI Search", "Vertex AI", "Django", "PostgreSQL"]
     },
     {
-      id: "rag-legal-research",
-      title: "RAG-Powered Legal Research Platform",
-      category: "AI/ML Application",
-      challenge: "Lawyers needed semantic search across 1,000+ Canadian & US case law documents, but keyword matching was insufficient and manual review cost hours per query.",
-      solution: "Architected RAG pipeline with NLP document parsing, OpenAI embeddings stored in Pinecone/Azure AI Search, and Vertex AI fine-tuning loop fed by lawyer feedback—scaling to 5,000 records with automated retraining.",
-      result: "Enabled instant case law retrieval for 50+ lawyers—improved accuracy from 82% to 87% through fine-tuning, enabled natural language queries, and cut research time from hours to seconds via semantic search.",
-      technologies: ["OpenAI", "Vertex AI", "Python", "Vector Search", "Pinecone", "Azure AI Search", "NLP"]
+      id: "sanction-workflow",
+      title: "HR Sanctions Workflow Automation",
+      category: "Workflow Automation / Full-Stack",
+      challenge: "An enterprise client's HR team handled employee disciplinary cases entirely manually: supervisors wrote warning letters inconsistently, with no compliance checks and no audit trail—creating compliance risk and 3-hour processing times.",
+      solution: "Built an end-to-end workflow platform: supervisors log incidents via a React Native mobile app, triggering an Azure Durable Functions orchestrator. The orchestrator gathers employee incident history, company handbook, and government labor regulations, then uses Azure OpenAI to recommend an action level (verbal warning, written warning, suspension, or termination). HR reviews and approves or overrides. System auto-generates a legally compliant letter and logs every action for audit trails.",
+      result: "Reduced 3-hour manual process to 15–30 minutes. Eliminated inconsistent letters through AI-assisted generation. Full audit trail created for every case. Human-in-the-loop design kept HR in control of every final decision.",
+      technologies: ["Azure Durable Functions", "Azure OpenAI", "Python", "Django", "React Native", "Next.js", "Azure SignalR", "Azure SQL"]
     },
     {
       id: "mobile-apps",
-      title: "Lychii Mobile Apps (iOS & Android)",
-      category: "Mobile Development",
-      challenge: "Field workers needed to capture complaints and deliver documents on-site, but web-only access limited mobility and created data-entry delays.",
-      solution: "Built cross-platform React Native apps (published on App Store & Play Store) with offline-first architecture, Azure real-time sync, and push notifications for status updates—integrated with backend workflow APIs.",
-      result: "Empowered 30+ field workers with mobile-first workflows—reduced data entry lag through offline capture, provided multi-channel access to legal documents, and enabled real-time case updates in the field.",
-      technologies: ["React Native", "TypeScript", "Azure", "Real-time Sync", "Push Notifications"]
+      title: "Mobile Apps (iOS & Android)",
+      category: "Mobile / React Native",
+      challenge: "Field workers needed to capture incident reports and receive case documents on-site. Web-only access created delays and prevented real-time updates in the field.",
+      solution: "Built cross-platform React Native apps (published on iOS App Store and Google Play Store) integrated with the workflow automation backend. Push notifications for status updates, real-time sync via Azure SignalR, and seamless handoff to the Next.js dashboard for HR reviewers.",
+      result: "Enabled on-site incident capture and real-time document delivery for field workers. Provided the multi-channel access layer that made the HR sanctions workflow end-to-end.",
+      technologies: ["React Native", "TypeScript", "Azure SignalR", "Push Notifications", "Django REST API"]
     }
   ]
 
@@ -467,10 +483,86 @@ function ProjectsSection() {
                     </Badge>
                   ))}
                 </div>
+
+                <div className="flex items-center gap-2 pt-1 text-xs text-muted-foreground border-t border-border/50 mt-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground/40 flex-shrink-0" />
+                  Private codebase — happy to walk through architecture in detail
+                </div>
               </CardContent>
 
             </Card>
           ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// Education Section
+function EducationSection() {
+  return (
+    <section id="education" className="section-padding bg-muted/20">
+      <div className="container-custom">
+        <div className="text-center mb-16">
+          <Badge variant="outline" className="mb-4">
+            🎓 Education
+          </Badge>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Academic <span className="gradient-text">Foundation</span>
+          </h2>
+        </div>
+
+        <div className="max-w-4xl mx-auto space-y-6">
+          <Card className="interactive-card">
+            <CardHeader>
+              <div className="flex items-start gap-4">
+                <GraduationCap className="h-8 w-8 text-primary mt-1 flex-shrink-0" />
+                <div className="flex-1">
+                  <CardTitle className="text-xl">Master of Science — Applied Computer Science</CardTitle>
+                  <CardDescription className="text-base mt-1">
+                    <span className="text-primary font-semibold">Concordia University</span> • Montreal, Canada
+                  </CardDescription>
+                  <div className="flex items-center gap-2 mt-2 text-sm text-muted-foreground">
+                    <Calendar className="h-4 w-4" />
+                    <span>Sept 2022 – Apr 2024</span>
+                  </div>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "Advanced Programming Practices",
+                  "Applied Artificial Intelligence",
+                  "Distributed System Design",
+                  "Data Communication & Networking",
+                  "Algorithm Design & Analysis",
+                ].map((course) => (
+                  <Badge key={course} variant="secondary" className="text-xs">
+                    {course}
+                  </Badge>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="interactive-card">
+            <CardHeader>
+              <div className="flex items-start gap-4">
+                <GraduationCap className="h-8 w-8 text-muted-foreground mt-1 flex-shrink-0" />
+                <div className="flex-1">
+                  <CardTitle className="text-xl">Bachelor of Technology — Computer Science</CardTitle>
+                  <CardDescription className="text-base mt-1">
+                    <span className="text-primary font-semibold">Geetanjali College of Engineering and Technology</span> • Hyderabad, India
+                  </CardDescription>
+                  <div className="flex items-center gap-2 mt-2 text-sm text-muted-foreground">
+                    <Calendar className="h-4 w-4" />
+                    <span>June 2016 – Sept 2020</span>
+                  </div>
+                </div>
+              </div>
+            </CardHeader>
+          </Card>
         </div>
       </div>
     </section>
@@ -526,8 +618,8 @@ function ContactSection() {
             Let's <span className="gradient-text">Work Together</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            I'm always interested in new opportunities and exciting projects. Whether you have a question 
-            or just want to say hi, I'll try my best to get back to you!
+            I'm open to Backend, AI Engineering, and Full-Stack roles — Toronto-based and available for remote work too.
+            Reach out directly and I'll get back to you.
           </p>
         </div>
 
@@ -572,7 +664,7 @@ export default function Portfolio() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "about", "experience", "projects", "contact"]
+      const sections = ["home", "about", "experience", "education", "projects", "contact"]
       const currentSection = sections.find((section) => {
         const element = document.getElementById(section)
         if (element) {
@@ -594,11 +686,12 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen">
       <EnhancedNavigation activeSection={activeSection} />
-      
+
       <main id="main-content">
         <HeroSection />
         <SkillsSection />
         <ExperienceSection />
+        <EducationSection />
         <ProjectsSection />
         <ContactSection />
       </main>
@@ -608,7 +701,7 @@ export default function Portfolio() {
         <div className="container-custom">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-muted-foreground text-sm">
-              © 2025 Ashish Reddy Jaddu. CTO @ LegiSimple. Built with Next.js, React & Tailwind CSS.
+              © 2026 Ashish Reddy Jaddu · Founding AI Engineer · Toronto, Canada · Open to new opportunities
             </p>
             <div className="flex items-center gap-4">
               <Button variant="ghost" size="sm" asChild>

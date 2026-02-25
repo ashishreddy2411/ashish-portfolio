@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { useTheme } from "next-themes"
-import { Moon, Sun, Menu, Home, User, Briefcase, FolderOpen, Mail, Github, Linkedin, ExternalLink } from "lucide-react"
+import { Moon, Sun, Menu, Home, User, Briefcase, FolderOpen, Mail, Github, Linkedin, ExternalLink, Sparkles } from "lucide-react"
 
 interface NavigationProps {
   activeSection?: string
@@ -60,20 +60,31 @@ export function EnhancedNavigation({ activeSection = "home" }: NavigationProps) 
   return (
     <>
       {/* Skip to main content - accessibility */}
-      <a 
-        href="#main-content" 
+      <a
+        href="#main-content"
         className="skip-link"
         onFocus={(e) => e.target.scrollIntoView()}
       >
         Skip to main content
       </a>
 
+      {/* Fixed wrapper: banner + nav stacked together */}
+      <div className="fixed top-0 w-full z-50">
+        {/* Open to Work Banner */}
+        <div className="bg-background/95 backdrop-blur-md border-b border-primary/20 py-1.5 px-4 text-center text-xs">
+          <span className="inline-flex items-center gap-2 text-primary font-medium">
+            <Sparkles className="h-3 w-3 flex-shrink-0" />
+            Available for Backend · AI Engineering · Full-Stack roles — Toronto &amp; Remote
+            <Sparkles className="h-3 w-3 flex-shrink-0" />
+          </span>
+        </div>
+
       {/* Main Navigation */}
-      <nav 
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-          isScrolled 
-            ? "glass-effect shadow-lg py-2" 
-            : "bg-transparent py-4"
+      <nav
+        className={`w-full transition-all duration-300 glass-effect ${
+          isScrolled
+            ? "shadow-lg py-2"
+            : "py-4"
         }`}
         role="banner"
         aria-label="Main navigation"
@@ -86,7 +97,7 @@ export function EnhancedNavigation({ activeSection = "home" }: NavigationProps) 
               className="font-mono text-lg font-bold gradient-text hover:scale-105 transition-transform duration-200"
               aria-label="Go to home section"
             >
-              <span className="text-blue-400">const</span> ashish = <span className="text-green-400">"developer"</span>
+              <span className="text-blue-400">const</span> ashish = <span className="text-green-400">"engineer"</span>
             </button>
 
             {/* Desktop Navigation */}
@@ -172,7 +183,7 @@ export function EnhancedNavigation({ activeSection = "home" }: NavigationProps) 
                   <div className="flex flex-col h-full">
                     {/* Mobile Logo */}
                     <div className="font-mono text-lg font-bold gradient-text mb-8 mt-4">
-                      <span className="text-blue-400">const</span> ashish = <span className="text-green-400">"developer"</span>
+                      <span className="text-blue-400">const</span> ashish = <span className="text-green-400">"engineer"</span>
                     </div>
 
                     {/* Mobile Navigation Links */}
@@ -226,6 +237,7 @@ export function EnhancedNavigation({ activeSection = "home" }: NavigationProps) 
           </div>
         </div>
       </nav>
+      </div>
     </>
   )
 } 
